@@ -1,0 +1,77 @@
+/* Container for all cards */
+.services-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 30px;
+    justify-content: center;
+    margin: 40px 0;
+    padding: 0 10px;
+}
+
+/* Individual card */
+.service-card {
+    flex: 1 1 220px;
+    max-width: 260px;
+    border-radius: 16px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+    overflow: hidden;
+}
+
+/* Hover effect for cards */
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* Card images */
+.service-card-img {
+    height: 180px;
+    object-fit: fill;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-card-img {
+    transform: scale(1.05);
+}
+
+/* Card body */
+.service-card-body {
+    text-align: center;
+    padding: 15px 10px;
+}
+
+/* Card title */
+.service-card-title {
+    font-weight: 700;
+    color: #343a40;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Card text */
+.service-card-text {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .services-container {
+        justify-content: center;
+    }
+    .service-card {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 576px) {
+    .service-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,92 @@
+/* PAGE CONTAINER */
+.appointment-page {
+  background: #ffffff;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  margin: 20px;
+}
+
+/* HEADING */
+.appointment-page h2 {
+  color: #f1c40f;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* CARD */
+.appointment-card {
+  background: #3564aa;
+  border-radius: 15px;
+  border: 1px solid rgba(241, 196, 15, 0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  color: #eaeaea;
+}
+
+/* ACCORDION HEADER */
+.accordion-button {
+  background-color: #1b253f;
+  color: #f8f5f5;
+  font-weight: 600;
+}
+
+/* ACCORDION HEADER HOVER */
+.accordion-button:hover {
+  background-color: #f5f4f1;
+  color: #000;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #2c2c2c;
+  color: #f1c40f;
+}
+
+.accordion-body {
+  background-color: #181818;
+  color: #dcdcdc;
+}
+
+/* FORM CONTROLS */
+.form-control,
+.form-select {
+  background-color: #121212;
+  border: 1px solid #f1c40f;
+  color: #eaeaea;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: #121212;
+  color: #ec9018;
+  border-color: #ffd700;
+  box-shadow: none;
+}
+
+/* RADIO BUTTONS */
+.form-check-input:checked {
+  background-color: #f1c40f;
+  border-color: #ffd700;
+}
+
+/* BOOK BUTTON */
+.book-btn {
+  background-color: #f1c40f;
+  border: none;
+  color: #000;
+  font-weight: 600;
+  padding: 10px 25px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #ffd700;
+  transform: translateY(-2px);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .appointment-card {
+    padding: 20px;
+  }
+}
