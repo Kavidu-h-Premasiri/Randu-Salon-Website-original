@@ -39,6 +39,12 @@ function MyNavBar() {
             </Nav.Link>
             <Nav.Link as={Link} to="/login" className="login-btn">
               Login
+            </Nav.Link><Nav.Link className="logout-btn"
+              onClick={() => {
+                localStorage.clear();   // remove login data
+                window.location.href = "/login"; // redirect
+              }}>
+              Logout
             </Nav.Link>
           </Nav>
 

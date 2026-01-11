@@ -16,10 +16,10 @@ function Footer() {
           <Col md={4} className="mb-3">
             <h5>Quick Links</h5>
             <Nav className="flex-column">
-              <Nav.Link as={Link} to="/" className="footer-link">
+              <Nav.Link as={Link} to="/home" className="footer-link">
                 Home
               </Nav.Link>
-              <Nav.Link as={Link} to="/services" className="footer-link">
+              <Nav.Link as={Link} to="/service" className="footer-link">
                 Services
               </Nav.Link>
               <Nav.Link as={Link} to="/appointment" className="footer-link">

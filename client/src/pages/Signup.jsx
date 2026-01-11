@@ -15,7 +15,7 @@ function Signup() {
 
         //validation
         if(!name || !email || !password){
-            alert("All fields are required")
+            alert("Please fill in all fields")
             return;
         }
 
@@ -43,9 +43,13 @@ function Signup() {
         axios.post('http://localhost:3001/',{name,email,password}) 
         .then(result=>{
             console.log(result)
+            alert(result.data.message); // display signup successful
             navigate('/login')
         })
-        .catch(err=>console.log(err))
+        .catch(err=>{
+            alert(err.response.data.message)
+            console.log(err)
+        })
 
     }
 

@@ -1,10 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Accordion } from "react-bootstrap";
 import '../css/Contact.css'
 import MyNavBar from "../component/MyNavBar";
 import Footer from "../component/Footer";
+import axios from "axios";
 
 function Contact() {
+
+  const [name,setName] = useState('')
+  const [email,setEmail] = useState('')
+  const [message,setMessage] = useState('')
+
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+
+    //validation
+        if(!name || !email || !message){
+            alert("Please fill in all fields")
+            return;
+        }
+
+    axios.post('http://localhost:3001/contact',{name,email,message})
+      .then(result=>{
+        console.log(result)
+        alert(result.data.message)
+      })
+      .catch(err=>{
+        alert(err.response.data.message)
+        console.log(err)
+      })
+
+  }
+
+
   return (
     <div>
     <MyNavBar/>
@@ -15,20 +43,20 @@ function Contact() {
         {/* Contact Form */}
         <Col md={6}>
           <h5>Send us a message</h5>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="contactName">
               <Form.Label>Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter your name" />
+              <Form.Control type="text" placeholder="Enter your name" onChange={(e)=>setName(e.target.value)}/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="contactEmail">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Enter your email" />
+              <Form.Control type="email" placeholder="Enter your email" onChange={(e)=>setEmail(e.target.value)}/>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="contactMessage">
               <Form.Label>Message</Form.Label>
-              <Form.Control as="textarea" rows={4} placeholder="Your message" />
+              <Form.Control as="textarea" rows={4} placeholder="Your message" onChange={(e)=>setMessage(e.target.value)}/>
             </Form.Group>
 
             <Button variant="primary" type="submit">
